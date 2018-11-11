@@ -12,7 +12,7 @@ const startRotation = () => {
     
 }
 
-let interval=0;
+let interval = 0;
 
 const startInterval = () => {
     clearInterval(interval)
@@ -35,8 +35,6 @@ bigCircle.setAttribute("class", "big");
 ball.setAttribute("class", "ball");
 startButton.addEventListener("click", startInterval);
 stopButton.addEventListener("click", stopRotation);
-startButton.setAttribute("id", "start");
-stopButton.setAttribute("id", "stop");
 
 
 document.body.appendChild(startButton)
