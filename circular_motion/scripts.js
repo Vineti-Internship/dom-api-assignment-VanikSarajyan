@@ -1,26 +1,15 @@
 let angle = 0;
 let x = 210;
 let y = 210;
-let r = 250;
+const radius = 250;
 
-const startRotation = () => {
-    angle = (angle + Math.PI / 360) % (Math.PI * 2); 
-    X = x + r * Math.cos(angle);
-    Y = y + r * Math.sin(angle);
+const changePosition = () => {
+    angle += 0.015;
+    X = x + radius * Math.cos(angle);
+    Y = y + radius * Math.sin(angle);
     ball.style.left = X + "px";
     ball.style.top = Y + "px";
     
-}
-
-let interval = 0;
-
-const startInterval = () => {
-    clearInterval(interval)
-    interval = setInterval(startRotation,5);
-}
-
-const stopRotation = () => {  
-    clearInterval(interval);
 }
 
 const startButton = document.createElement("button");
@@ -33,8 +22,14 @@ stopButton.innerHTML = "Stop";
 
 bigCircle.setAttribute("class", "big");
 ball.setAttribute("class", "ball");
-startButton.addEventListener("click", startInterval);
-stopButton.addEventListener("click", stopRotation);
+
+let interval = 0;
+startButton.addEventListener("click", () => {
+    interval = setInterval(changePosition, 5)
+});
+stopButton.addEventListener("click", () => {
+    clearInterval(interval);
+});
 
 
 document.body.appendChild(startButton)
