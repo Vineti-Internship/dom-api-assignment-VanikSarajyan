@@ -25,7 +25,8 @@ ball.setAttribute("class", "ball");
 
 let interval = 0;
 startButton.addEventListener("click", () => {
-    interval = setInterval(changePosition, 5)
+    clearInterval(interval);
+    interval = setInterval(changePosition, 5);
 });
 stopButton.addEventListener("click", () => {
     clearInterval(interval);
