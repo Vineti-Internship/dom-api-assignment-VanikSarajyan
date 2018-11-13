@@ -1,12 +1,12 @@
 let angle = 0;
-let x = 210;
-let y = 210;
+const x = 210;
+const y = 210;
 const radius = 250;
 
 const changePosition = () => {
     angle += 0.015;
-    X = x + radius * Math.cos(angle);
-    Y = y + radius * Math.sin(angle);
+    let X = x + radius * Math.cos(angle);
+    let Y = y + radius * Math.sin(angle);
     ball.style.left = X + "px";
     ball.style.top = Y + "px";
     
